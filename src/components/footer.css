@@ -24,7 +24,7 @@ footer {
 }
 
 .footer-section h2 {
-    margin-bottom: 10px; /* Espacio debajo del título */
+    margin-bottom: 5px; /* Espacio debajo del título */
 }
 
 .footer-section ul {
@@ -50,8 +50,9 @@ footer {
 }
 
 .search-input {
-    padding: 5px; /* Relleno dentro del campo de búsqueda */
+    margin-bottom: 20px; /* Espacio entre Buscar por nombre */
+    padding: 10px; /* Relleno dentro del campo de búsqueda */
     width: 200px; /* Ancho del campo de búsqueda */
     border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
+    border-radius: 5px; /* Bordes redondeados */
 }

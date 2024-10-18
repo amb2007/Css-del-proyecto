@@ -1,6 +1,4 @@
-
 import './Principal.css'
-import Footer from './footer';
 
 function Principal() {
   return (
@@ -26,7 +24,6 @@ function Principal() {
         <button id='buttonCategScienceFiction'className='buttonsCategStart'>Science Fictión</button>
         <p id='arrow2' className='arrows'>v</p>
       </div>
-      <Footer /> {Footer}
     </div>
   )
 }

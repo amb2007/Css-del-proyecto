@@ -1,23 +1,31 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Categorias from './components/Categorias';
-import InicioSesion from './components/InicioSesion';
+import Category from './components/Categorias';
+import SingupAndLogin from './components/InicioSesion';
 import Principal from './components/Principal';
-import Preguntas from './components/Preguntas';
-import CategoriaEspecifica from './components/CategoriaEspecifica';
-import Descripcion from './components/Descripcion';
+import Questions from './components/Preguntas';
+import SpecificCategory from './components/CategoriaEspecifica';
+import Description from './components/Descripcion';
+import Footer from './components/footer';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
+    <>
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/Principal" element={<Principal />} /> 
-        <Route path="/Categorias" element={<Categorias />} />
-        <Route path="/" element={<InicioSesion />} />
-        <Route path="/Preguntas" element={<Preguntas />} />
-        <Route path="/Descripcion" element={<Descripcion />} />
-        <Route path="/CategoriaEspecifica" element={<CategoriaEspecifica />} />
+        <Route path="/Categorias" element={<Category />} />
+        <Route path="/" element={<SingupAndLogin />} />
+        <Route path="/Preguntas" element={<Questions />} />
+        <Route path="/Descripcion" element={<Description />} />
+        <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
       </Routes>
+      <Footer /> {Footer}
     </Router>
+    
+    </>
+    
   );
 }
 

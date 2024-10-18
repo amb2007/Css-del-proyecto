@@ -1,8 +1,7 @@
 /* Estilo del footer */
 footer {
-    position: fixed; /* Hace que el footer se mantenga en su posición */
-    bottom: 0; /* Lo coloca en la parte inferior de la pantalla */
-    left: 0; /* Alineación al borde izquierdo */
+    position: relative; /* Cambiado a relative para que no esté fijo */
+    margin-top: auto; /* Permite que el footer se coloque al final del contenido */
     width: 100%; /* Se estira a lo largo de toda la página */
     background-color: #282c34; /* Color de fondo profesional */
     color: white; /* Texto en blanco */
@@ -10,12 +9,14 @@ footer {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
     font-size: 14px; /* Tamaño de fuente profesional */
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    padding: 20px 0; /* Espaciado interno */
 }
 
 .footer-content {
     display: flex; /* Flexbox para distribución de secciones */
     justify-content: space-between; /* Espacio entre secciones */
     align-items: flex-start; /* Alineación en la parte superior */
+    flex-wrap: wrap; /* Permite que las secciones se ajusten en pantallas más pequeñas */
 }
 
 .footer-section {
@@ -52,7 +53,8 @@ footer {
 .search-input {
     margin-bottom: 20px; /* Espacio entre Buscar por nombre */
     padding: 10px; /* Relleno dentro del campo de búsqueda */
-    width: 200px; /* Ancho del campo de búsqueda */
+    width: 100%; /* Cambiado a 100% para que se ajuste al contenedor */
+    max-width: 200px; /* Ancho máximo del campo de búsqueda */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
 }

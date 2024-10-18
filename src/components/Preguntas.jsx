@@ -1,6 +1,4 @@
-import { useState } from "react";
 import "./Preguntas.css";
-import Footer from './footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Componente de Font Awesome
 import { faRocket } from '@fortawesome/free-solid-svg-icons'; // Ícono de cohete
 import { faHeart } from '@fortawesome/free-solid-svg-icons'; // corazon
@@ -49,7 +47,6 @@ function Preguntas() {
             <div className="movie-title">Título De La Peli En La Imagen</div>
             <div className="movie-author">nombre del Autor</div>
           </div>
-          <Footer /> {Footer}
         </div>
       </center>
     </div>

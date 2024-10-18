@@ -1,42 +1,68 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-  }
-  
-  @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-      animation: logo-spin infinite 20s linear;
-    }
-  }
-  
-  .card {
-    padding: 2em;
-  }
-  
-  .read-the-docs {
-    color: #888;
-  }
+/* Estilo general del navbar */
+nav {
+    background-color: #333; /* Color oscuro para el fondo del navbar */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+#logo {
+    width: 40px;
+    height: 40px;
+}
+
+/* Lista de navegación */
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    margin: 0 15px;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+/* Hover en los enlaces */
+ul li a:hover {
+    color: #ff69b4; /* Color rosa cuando se pasa el cursor */
+}
+
+/* Botones de inicio de sesión y registro */
+nav div {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif;
+    border-radius: 3px;
+}
+
+button#login {
+    background-color: white;
+    color: black;
+}
+
+button#register {
+    background-color: #ff69b4;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.8; /* Efecto hover para ambos botones */
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <style>
+      html {
+        background-color: black;
+      }
+      #portada {
+        max-width: fit-content;
+        max-height: min-content;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative !important;
+        background-color: #a259ff;
+      }
+      #imagen-portada {
+        -webkit-mask-image: linear-gradient(black, transparent);
+        mask-image: linear-gradient(black, transparent);
+        z-index: 0;
+      }
+
+      #imagen-portada img {
+        max-width: 100%;
+        max-width: 10000px;
+        min-width: fit-content;
+        position: relative !important;
+      }
+
+      #info {
+        margin-top: 25%;
+        margin-left: 25%;
+        float: left;
+        position: absolute !important;
+        left: 0px;
+        top: 0px;
+        z-index: 10;
+        padding: 5px;
+        color: #ffffff;
+        font-weight: bold;
+        float: left;
+      }
+
+      #info h1 {
+        color: white;
+        letter-spacing: 3px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      #info p {
+        margin-bottom: 10px;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+      #info button {
+        color: black;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        background-color: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+      }
+
+      #info button:hover {
+        background-color: #d4deff;
+      }
+      #info button:active {
+        background-color: #b5b5ff;
+      }
+      #autor-card {
+        height: 25px;
+        letter-spacing: 1px;
+        max-width: fit-content;
+        text-align: center;
+        font-size: small;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        background-color: #3B3B3B;
+        border-radius: 20px;
+      }
+
+      .timer-container {
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 20;
+        position: relative !important;
+        max-width: fit-content;
+        padding: 15px;
+        border-radius: 20px;
+        margin-left: 135px;
+        float: right;
+        margin-top: -60px;
+      }
+
+      #duration {
+        font-family: "Courier New", Courier, monospace !important;
+        color: white;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;
+      }
+      #timer {
+        margin-left: 2vw;
+        margin-right: 2vw;
+        font-family: "Courier New", Courier, monospace;
+        color: white;
+        padding-bottom: 4px;
+        font-size: 2em;
+        font-weight: bold;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <main>
+      <div id="portada">
+        <div id="imagen-portada">
+          <img src="Imagenes/avengers.png" alt="" />
+        </div>
+        <div id="info">
+          <p id="autor-card">Nombre del Autor</p>
+          <h1>Film Name</h1>
+          <button>
+            <eye style="color: #a259ff">👁</eye> Ver mas informacion
+          </button>
+          <div class="timer-container">
+            <p id="duration">Duración:</p>
+            <b><span id="timer">59 : 59 : 59</span></b>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

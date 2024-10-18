@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./Portada.css";
+import "./Preguntas.css";
 
 function Preguntas() {
   const [movie, setMovie] = useState(null);

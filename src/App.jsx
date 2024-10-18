@@ -1,32 +1,24 @@
-import React from 'react';
-import './App.css'; 
-import Banner from './assets/marcos.jpg';
-import Footer from './components/footer';
-// Importar Font Awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Componente de Font Awesome
-import { faRandom, faSearch } from '@fortawesome/free-solid-svg-icons'; // Importar iconos específicos
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Categorias from './components/Categorias';
+import InicioSesion from './components/InicioSesion';
+import Principal from './components/Principal';
+import Preguntas from './components/Preguntas';
+import CategoriaEspecifica from './components/CategoriaEspecifica';
+import Descripcion from './components/Descripcion';
 
 function App() {
   return (
-    <div className="app-container"> {/* Contenedor principal de la aplicación */}
-      <img src={Banner} alt="Banner" className="banner" /> {/* Banner de la aplicación */}
-      <div className="text-container"> {/* Contenedor para el texto */}
-        <h1 className="title">Categorias</h1> {/* Título principal */}
-        <p className="description">Aquí puedes explorar diferentes categorías.</p> {/* Descripción */}
-        <div className="button-group"> {/* Contenedor para los botones */}
-          {/* Botón Aleatorio con icono */}
-          <button className="random-button">
-            <FontAwesomeIcon icon={faRandom} /> Aleatoria {/* El icono se añade aquí */}
-          </button>
-          {/* Botón Específico con icono */}
-          <button className="specific-button">
-            <FontAwesomeIcon icon={faSearch} /> Específica {/* El icono se añade aquí */}
-          </button>
-        </div>
-        <Footer /> {Footer}
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/Principal" element={<Principal />} /> 
+        <Route path="/Categorias" element={<Categorias />} />
+        <Route path="/" element={<InicioSesion />} />
+        <Route path="/Preguntas" element={<Preguntas />} />
+        <Route path="/Descripcion" element={<Descripcion />} />
+        <Route path="/CategoriaEspecifica" element={<CategoriaEspecifica />} />
+      </Routes>
+    </Router>
   );
 }
 
-export default App; 
+export default App;

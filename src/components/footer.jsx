@@ -1,5 +1,6 @@
 import React from "react";
-import "./footer.css"; // Asegúrate de que la ruta sea correcta
+import './footer.css';
+; // Asegúrate de que la ruta sea correcta
 
 function Footer() {
     return (

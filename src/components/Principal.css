@@ -1,0 +1,94 @@
+/*en la parte d no sabes que pelicula ver, poner el grid y que todo eso este envuelto en una sola clase o id particular*/
+.discoveryBegins {
+    text-align: center;  
+    display:block;
+    padding: 10px;  
+    background-color: #540D53; 
+  }
+  .discoveryBegins h2 {
+    font-size: 32px;      
+    color: #000000;       
+    padding-left: 30px;
+    margin-bottom: 20px;   
+  }
+  img{
+    max-width: 40%;      
+    display: flex;
+  }
+  #discoveryButton{
+    background-color: #F5167E;
+    color: white;              
+    padding: 10px 20px;      
+    border: none;             
+    border-radius: 50px;      
+    transition: box-shadow 0.3s; 
+    box-shadow: 
+      0 0 5px rgba(255, 255, 255, 0.5), 
+      0 0 15px rgba(84, 13, 83, 0.7); 
+  }
+  
+  .homePage{
+    background-image: url("./public/img/homePageTitle.svg"); 
+    background-size: cover;  
+    background-position: center;  
+    height: 400px;  
+    width: 100%;  
+    }
+  
+  :root{
+    background-color:  #3e3d3d;
+  }
+  .homePage h1 {
+    color:#BA306A;
+    font-size: 96px;
+  }
+  .homePage p{
+    color: white; 
+    font-size: 32px;
+  
+  }
+  #arrow0{
+    position: absolute;
+    top: 255px; 
+    left: 50%;
+  }
+  p.arrows{
+    font-size: 32px;
+    border-color: #c22366;
+    color: #3e3d3d;
+    text-shadow: 
+      -1px -1px 0 #c22366, 
+      1px -1px 0 #c22366, 
+      -1px  1px 0 #c22366, 
+      1px  1px 0 #c22366; 
+    
+    }
+  .certainCategories{
+    padding: 3px 50px;
+    display: flex;
+    gap: 12px;
+    align-items: baseline ; /* Puedes reemplazar 'stretch' por cualquier otro valor */}
+  #arrow1{
+    top: 96%;
+    left: 0%;
+    display: flex;
+    padding: 3px 50px;
+    position: absolute;
+    transform: rotate(90deg);
+  }
+  #arrow2{
+    top: 96%;
+    left: 90%;
+    padding: 3px 50px;
+    position: absolute;
+    transform: rotate(270deg);
+  }
+  
+  .buttonsCategStart{
+    background-color: #3e3d3d;
+    color: #EF629D;
+    padding: 3px 50px;      
+    border:2px solid #EF629D;
+    border-radius: 8px;
+    margin: 62px;
+  }

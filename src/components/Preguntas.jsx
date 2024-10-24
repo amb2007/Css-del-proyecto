@@ -1,9 +1,11 @@
+//Hecho por Fritz Joaquin y Stasyszyn Nicolas y Maximo Vijarra
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Preguntas.css";
 
 function Preguntas() {
-  const [movie, setMovie] = useState(null);
+	const [movie, setMovie] = useState(null);
 	const [randomMovie, setRandomMovie] = useState("");
 
 	const iconicMovies = [
@@ -648,29 +650,39 @@ function Preguntas() {
 		<>
 			<div className="grilla">
 				<div className="info-peli">
-					<h1>Movie Randomizer</h1>
-					<main>
-						{movie && movie.Title ? (
-							<div key={movie.imdbID}>
-								<h2>{movie.Title}</h2>
-								<p>{movie.Plot}</p>
-							</div>
-						) : (
-							<p>No hay película seleccionada</p>
-						)}
-					</main>
-					<button onClick={RandomMovie} className="my-button">❤️</button>
-					<button className="my-button">Watch now🎬</button>
-					<button onClick={RandomMovie} className="my-button">❌</button>
+					<center>
+						<h1>Movie Randomizer</h1>
+						<main>
+							{movie && movie.Title ? (
+								<div key={movie.imdbID}>
+									<h2>{movie.Title}</h2>
+									<p>{movie.Plot}</p>
+								</div>
+							) : (
+								<p>No hay película seleccionada</p>
+							)}
+						</main>
+						<button onClick={RandomMovie} className="my-button">❤️</button>
+						<button className="my-button">Watch now🎬</button>
+						<button onClick={RandomMovie} className="my-button">❌</button>
+					</center>
 				</div>
-				<div className="port-peli">
-					<main>
-						{movie.Poster ? (
-							<img src={movie.Poster} alt={movie.Title} style={{ width: "250px", height: "auto" }}/>
-						) : (
-							<p>No hay imagen disponible</p>
-						)}
-					</main>
+				<div className="img-peli">
+					<center>
+						<main>
+							{movie && movie.Title ? (
+								<div key={movie.imdbID} className="imagen">
+									{movie.Poster ? (
+										<img src={movie.Poster} alt={movie.Title} />
+									) : (
+										<p>No hay imagen disponible</p>
+									)}
+								</div>
+							) : (
+								<p>No hay película seleccionada</p>
+							)}
+						</main>
+					</center>
 				</div>
 			</div>
 		</>

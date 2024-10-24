@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Category from './components/Categorias';
-import SingupAndLogin from './components/InicioSesion';
+import SingupAndLogin from './components/SignupAndLogin';
 import Principal from './components/Principal';
 import Questions from './components/Preguntas';
 import SpecificCategory from './components/CategoriaEspecifica';

@@ -1,18 +1,20 @@
+const apiKey = import.meta.env.VITE_API_KEY;
 
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCqJXIVos2lFL_sC4rYGIQ-l0Kp-67YkrA",
-  authDomain: "usuarios-tinder-movies.firebaseapp.com",
-  projectId: "usuarios-tinder-movies",
-  storageBucket: "usuarios-tinder-movies.appspot.com",
-  messagingSenderId: "923345200348",
-  appId: "1:923345200348:web:3b103677acbc5a89a34019",
-  measurementId: "G-8Z5M04ZMBG"
+  apiKey: apiKey,  
+  authDomain: "your-app.firebaseapp.com",
+  projectId: "your-app-id",
+  storageBucket: "your-app.appspot.com",
+  messagingSenderId: "your-sender-id",
+  appId: "your-app-id"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-export {app}
+const db = getFirestore(app);
+
+export { app,db, apiKey };

@@ -1,4 +1,3 @@
-import "./Footer.css";
 import './SignupAndLogin'
 import Login from "./Login";
 import { useState } from 'react';

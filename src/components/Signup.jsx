@@ -81,42 +81,42 @@ function Signup() {
               name='Name'
               type='text'
             ></input>
-            <h5>{error.Name}</h5>
+            <h5 className="Error">{error.Name}</h5>
             <h3>Apellido</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='LastName'
               type='text'
             ></input>
-            <h5>{error.LastName}</h5>
+            <h5 className="Error">{error.LastName}</h5>
             <h3>Edad</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='Age'
               type='number'
             ></input>
-            <h5>{error.Age}</h5>
+            <h5 className="Error">{error.Age}</h5>
             <h3>Gmail</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='Gmail'
               type='email'
             ></input>
-            <h5>{error.Gmail}</h5>
+            <h5 className="Error">{error.Gmail}</h5>
             <h3>contraseña</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='Password'
               type='password'
             ></input>
-            <h5>{error.Password}</h5>
+            <h5 className="Error">{error.Password}</h5>
             <h3>Confirmar contraseña</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='CPassword'
               type='password'
             ></input>
-            <h5>{error.CPassword}</h5>
+            <h5 className="Error">{error.CPassword}</h5>
             <br></br>
             <button className="SignupButton" type='Submit'>Submit</button>
             <br></br>

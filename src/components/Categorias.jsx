@@ -1,7 +1,5 @@
 import React from 'react'; 
 import Banner from '../assets/marcos.jpg';
-import Footer from './footer';
-import Navbar from './Navbar';
 import './Categorias.css';
 // Importar Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Componente de Font Awesome

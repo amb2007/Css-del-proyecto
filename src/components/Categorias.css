@@ -3,20 +3,23 @@ body {
     font-family: 'Work Sans', sans-serif;
     margin: 0; 
     background: #2B2B2B;
-    ;
+    background-size: cover;  
+
   }
   
   .app-container {
-    height: 100vh;
+
     display: flex;
     align-items: center; /* Centra verticalmente el contenido */
     justify-content: space-around; /* Espacia los elementos */
+    
   }
   
   .banner {
     width: 500px; /* Ancho fijo de la imagen */
-    height: 645px; /* Alto fijo de la imagen */
+    height: 600px; /* Alto fijo de la imagen */
     object-fit: cover; /* Mantiene la proporción de la imagen */
+    margin-top: 100px;
   }
   
   .text-container {

@@ -1,26 +1,38 @@
-/* Estilo del footer */
+html, body {
+    height: 100%; /* Asegura que el cuerpo y la página ocupen toda la altura */
+    margin: 0;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Altura mínima del viewport */
+}
+
+main {
+    flex: 1; /* Ocupa todo el espacio disponible entre el header y el footer */
+}
+
 footer {
-    position: relative; /* Cambiado a relative para que no esté fijo */
-    margin-top: auto; /* Permite que el footer se coloque al final del contenido */
-    width: 100%; /* Se estira a lo largo de toda la página */
-    background-color: #282c34; /* Color de fondo profesional */
+    background-color: #282c34; /* Color de fondo */
     color: white; /* Texto en blanco */
-    text-align: center; /* Alineación central del texto */
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Sombra para efecto de elevación */
-    font-size: 14px; /* Tamaño de fuente profesional */
-    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    text-align: center; /* Texto centrado */
     padding: 20px 0; /* Espaciado interno */
+    width: 100%; /* Ocupa todo el ancho */
+    margin-top: auto; /* Empuja el footer al final del contenido */
+    position: relative; /* No está fijo en la pantalla */
+    bottom: 0;
 }
 
 .footer-content {
     display: flex; /* Flexbox para distribución de secciones */
     justify-content: space-between; /* Espacio entre secciones */
     align-items: flex-start; /* Alineación en la parte superior */
-    flex-wrap: wrap; /* Permite que las secciones se ajusten en pantallas más pequeñas */
+    flex-wrap: wrap; /* Ajusta las secciones en pantallas más pequeñas */
 }
 
 .footer-section {
-    flex: 1; /* Permite que cada sección ocupe espacio igual */
+    flex: 1; /* Las secciones ocupan espacio igual */
     margin: 0 20px; /* Margen entre secciones */
 }
 
@@ -53,8 +65,10 @@ footer {
 .search-input {
     margin-bottom: 20px; /* Espacio entre Buscar por nombre */
     padding: 10px; /* Relleno dentro del campo de búsqueda */
-    width: 100%; /* Cambiado a 100% para que se ajuste al contenedor */
+    width: 100%; /* Ancho completo */
     max-width: 200px; /* Ancho máximo del campo de búsqueda */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
 }
+
+

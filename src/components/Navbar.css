@@ -5,6 +5,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed; /* Fija el navbar al tope */
+    top: 0; /* Lo coloca en la parte superior */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
+}
+
+/* Asegura que el contenido no se superponga con el navbar */
+body {
+    padding-top: 60px; /* Ajusta este valor según la altura del navbar */
 }
 
 /* Logo */

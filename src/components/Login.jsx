@@ -1,5 +1,5 @@
 import { useState,React } from 'react';
-import './SignupAndLogin'
+import './SingUpAndLogin.css'
 import {getAuth,signInWithEmailAndPassword} from 'firebase/auth'
 import { app } from './db';
 const auth=getAuth(app)

@@ -2,13 +2,16 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Preguntas.css";
 
 function Preguntas() {
-	const [movie, setMovie] = useState(null);
-	const [randomMovie, setRandomMovie] = useState("");
-
-	const iconicMovies = [
+    const [movie, setMovie] = useState(null);
+    const [randomMovie, setRandomMovie] = useState("");
+    const navigate = useNavigate();
+	const [loader, setLoader] = useState(false);
+	
+    const iconicMovies = [
 		"12 Angry Men",
 		"Rear Window",
 		"Vertigo",
@@ -629,6 +632,45 @@ function Preguntas() {
 		"The Fabelmans",
 		"The Banshees of Inisherin",
 		"Avatar: The Way of Water",
+		"Gladiator", "Memento", "Inception", "Avatar", "Iron Man",
+		"The Dark Knight", "Batman Begins", "Requiem for a Dream", "The Prestige", "Shutter Island",
+		"Finding Nemo", "The Lord of the Rings: The Two Towers", "Kill Bill: Vol. 1", "Kill Bill: Vol. 2", "The Departed",
+		"The Lord of the Rings: The Fellowship of the Ring", "The Lord of the Rings: The Return of the King", "Catch Me If You Can", "A Beautiful Mind", "Slumdog Millionaire",
+		"Pirates of the Caribbean: The Curse of the Black Pearl", "Pirates of the Caribbean: Dead Man's Chest", "Pirates of the Caribbean: At World's End", "The Incredibles", "Spider-Man",
+		"Spider-Man 2", "Spider-Man 3", "The Bourne Identity", "The Bourne Supremacy", "The Bourne Ultimatum",
+		"Zodiac", "The Notebook", "The Butterfly Effect", "American Psycho", "Munich",
+		"The Pianist", "Gangs of New York", "Mystic River", "No Country for Old Men", "There Will Be Blood",
+		"Million Dollar Baby", "Lost in Translation", "The Aviator", "The Curious Case of Benjamin Button", "Casino Royale",
+		"Quantum of Solace", "28 Days Later", "Children of Men", "District 9", "Sin City",
+		"300", "I Am Legend", "Up", "Wall-E", "Ratatouille",
+		"Cars", "Monsters, Inc.", "Toy Story 3", "The Hangover", "Little Miss Sunshine",
+		"The 40-Year-Old Virgin", "Superbad", "Step Brothers", "Elf", "Mean Girls",
+		"The Royal Tenenbaums", "The Ring", "The Grudge", "Saw", "Saw II",
+		"Saw III", "Saw IV", "The Others", "Signs", "The Sixth Sense",
+		"A.I. Artificial Intelligence", "Minority Report", "Unbreakable", "The Village", "Blade II",
+		"X-Men", "X2: X-Men United", "X-Men: The Last Stand", "Hulk", "Iron Man 2",
+		"The Hulk", "The Incredible Hulk", "The Transporter", "Troy", "Alexander",
+		"Public Enemies", "Hancock", "Hellboy", "Hellboy II: The Golden Army", "Fantastic Four",
+		"Fantastic Four: Rise of the Silver Surfer", "The Day After Tomorrow", "Knowing", "Signs", "Constantine",
+		"Resident Evil", "Resident Evil: Apocalypse", "Underworld", "Underworld: Evolution", "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+		"The Chronicles of Narnia: Prince Caspian", "National Treasure", "National Treasure: Book of Secrets", "The Da Vinci Code", "Angels & Demons",
+		"Eragon", "Twilight", "New Moon", "Eclipse", "The Twilight Saga: Breaking Dawn – Part 1",
+		"Harry Potter and the Sorcerer's Stone", "Harry Potter and the Chamber of Secrets", "Harry Potter and the Prisoner of Azkaban", "Harry Potter and the Goblet of Fire", "Harry Potter and the Order of the Phoenix",
+		"Harry Potter and the Half-Blood Prince", "Harry Potter and the Deathly Hallows – Part 1", "Harry Potter and the Deathly Hallows – Part 2", "The Matrix Reloaded", "The Matrix Revolutions",
+		"Kill Bill", "Hero", "The Passion of the Christ", "Brokeback Mountain", "Ray",
+		"Walk the Line", "8 Mile", "Dreamgirls", "Rent", "Chicago",
+		"The Hurt Locker", "The Green Mile", "The Blind Side", "Up in the Air", "Juno",
+		"Thank You for Smoking", "Catch Me If You Can", "The Terminal", "Bridge to Terabithia", "A Walk to Remember",
+		"Big Fish", "The Pursuit of Happyness", "Remember the Titans", "Coach Carter", "Love Actually",
+		"My Big Fat Greek Wedding", "The Proposal", "How to Lose a Guy in 10 Days", "Maid in Manhattan", "She's the Man",
+		"Mean Girls", "Legally Blonde", "The Princess Diaries", "The Devil Wears Prada", "Miss Congeniality",
+		"Bruce Almighty", "Yes Man", "Fun with Dick and Jane", "Along Came Polly", "Just Married",
+		"Sweet Home Alabama", "The Wedding Planner", "13 Going on 30", "Freaky Friday", "The Parent Trap",
+		"Cheaper by the Dozen", "Night at the Museum", "Night at the Museum: Battle of the Smithsonian", "Madagascar", "Madagascar: Escape 2 Africa",
+		"Shrek", "Shrek 2", "Shrek the Third", "Shrek Forever After", "Ice Age",
+		"Ice Age: The Meltdown", "Ice Age: Dawn of the Dinosaurs", "Alvin and the Chipmunks", "Kung Fu Panda", "Kung Fu Panda 2",
+		"Over the Hedge", "Horton Hears a Who!", "Charlotte's Web", "The Simpsons Movie", "Cloudy with a Chance of Meatballs",
+		"Happy Feet", "Happy Feet Two", "Chicken Little", "Bolt", "Brother Bear",
 	];
 
 	const RandomMovie = () => {
@@ -638,11 +680,15 @@ function Preguntas() {
 	};
 
 	useEffect(() => {
+		setLoader(true)
 		if (randomMovie) {
 			axios
 				.get(`https://www.omdbapi.com/?t=${randomMovie}&apikey=e5b17a6c`)
 				.then((res) => setMovie(res.data))
-				.catch((err) => console.error("Error fetching movie", err));
+				.catch((err) =>	console.error("Error fetching movie", err))
+				.finally(()=>{
+					setLoader(false)
+				})
 		}
 	}, [randomMovie]);
 
@@ -652,7 +698,7 @@ function Preguntas() {
 				<div className="info-peli">
 					<center>
 						<h1>Movie Randomizer</h1>
-						<main>
+						<section>
 							{movie && movie.Title ? (
 								<div key={movie.imdbID}>
 									<h2>{movie.Title}</h2>
@@ -661,7 +707,7 @@ function Preguntas() {
 							) : (
 								<p>No hay película seleccionada</p>
 							)}
-						</main>
+						</section>
 						<button onClick={RandomMovie} className="my-button">❤️</button>
 						<button className="my-button">Watch now🎬</button>
 						<button onClick={RandomMovie} className="my-button">❌</button>
@@ -669,8 +715,12 @@ function Preguntas() {
 				</div>
 				<div className="img-peli">
 					<center>
-						<main>
-							{movie && movie.Title ? (
+					<main>
+							{loader ? (
+								<div className="loader"/>
+							): 
+								movie && movie.Title ? (
+								<div>
 								<div key={movie.imdbID} className="imagen">
 									{movie.Poster ? (
 										<img src={movie.Poster} alt={movie.Title} />
@@ -678,9 +728,11 @@ function Preguntas() {
 										<p>No hay imagen disponible</p>
 									)}
 								</div>
+								</div>
 							) : (
 								<p>No hay película seleccionada</p>
 							)}
+						
 						</main>
 					</center>
 				</div>

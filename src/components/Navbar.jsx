@@ -3,6 +3,7 @@ import './SingUpAndLogin.css'
 import Login from "./Login";
 import { useState } from 'react';
 import Signup from "./Signup";
+
 function Navbar() {
     const [SignupIsOpen, SetSignupIsOpen] = useState(false);
     const [LoginIsOpen, SetLoginIsOpen] = useState(false);

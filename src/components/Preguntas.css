@@ -31,9 +31,10 @@ body {
     border: 16px solid #f3f3f3; /* Light grey */
     border-top: 16px solid #3498db; /* Blue */
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 8rem; /* Ajusta este valor según el tamaño que desees */
+    height: 8rem;
     animation: spin 2s linear infinite;
+    display: flex; /* Centra verticalmente */
   }
   
   @keyframes spin {
@@ -68,4 +69,20 @@ body {
 }
 .dislike {
     animation: dislikeFade 1s forwards;
+}
+
+
+/* Resolucion de las imagenes y tamaño*/
+.img-poster {
+  width: 16rem; /* Ajusta este valor según el tamaño que desees */
+  height: auto; /* Mantiene la relación de aspecto */
+  max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+  display: block; /* Para eliminar el espacio debajo de la imagen en línea */
+  margin-top: 4rem; /* Centra la imagen si está en un contenedor */
+}
+
+/*Centrado de data*/
+.info-peli{
+  margin-top: 9rem;
+  padding-left: 15%;
 }

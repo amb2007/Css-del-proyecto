@@ -693,10 +693,10 @@ function Preguntas() {
                     <center>
                         <main>
                             {loader ? (
-                                <div className="loader" />
+                                <div className="loader	" />
                             ) : movie && movie.Poster ? (
                                 <div key={movie.imdbID} className="imagen">
-                                    <img src={movie.Poster} alt={movie.Title} />
+                                    <img className="img-poster" src={movie.Poster} alt={movie.Title} />
                                 </div>
                             ) : (
                                 <p>No movie selected</p>

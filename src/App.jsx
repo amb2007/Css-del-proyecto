@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Category from './components/Categorias';
-import SingupAndLogin from './components/SignupAndLogin';
 import Principal from './components/Principal';
 import Questions from './components/Preguntas';
 import SpecificCategory from './components/CategoriaEspecifica';
@@ -14,9 +13,8 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/Principal" element={<Principal />} /> 
+        <Route path="/" element={<Principal />} /> 
         <Route path="/Categorias" element={<Category />} />
-        <Route path="/" element={<SingupAndLogin />} />
         <Route path="/Preguntas" element={<Questions />} />
         <Route path="/Descripcion" element={<Description />} />
         <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />

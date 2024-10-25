@@ -60,13 +60,16 @@ function Signup() {
       .catch((error) => {
         const errorMessage = error.message;
         if (errorMessage === "Firebase: Error (auth/email-already-in-use).") {
-          SetError({ ...Error, Gmail: "La cuenta ya está en uso" });
+          SetError({ ...error, Gmail: "La cuenta ya está en uso" });
         }
       });
 
-    await signInWithEmailAndPassword(auth, Acount.Gmail, Acount.Password)
+      await signInWithEmailAndPassword(auth, Acount.Gmail, Acount.Password)
       .then((userCredential) => {
-        AddDataUser(userCredential["user"].uid);
+        props.send(userCredential["user"].uid)
+      })
+      .catch(() => {
+        SetError("No se a podido acceder a tu cuenta verifica la contraseña y el mail")
       });
   };
 

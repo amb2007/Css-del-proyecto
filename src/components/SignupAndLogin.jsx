@@ -17,7 +17,7 @@ function SignupAndLogin() {
 {SignupIsOpen && <Signup send={SetIdAcount}></Signup>}
 {LoginIsOpen && <Login send={SetIdAcount}></Login>}
 <div style={{display:"flex"}}>
-<button onClick={()=>{SetSignupIsOpen(true),console.log(IdAcount)}}>Signup</button>
+<button onClick={()=>{SetSignupIsOpen(true)}}>Signup</button>
 <button onClick={()=>SetLoginIsOpen(true)}>Login</button>
 </div>
             </>

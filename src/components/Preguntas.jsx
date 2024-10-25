@@ -10,7 +10,8 @@ function Preguntas() {
     const [randomMovie, setRandomMovie] = useState("");
     const [loader, setLoader] = useState(false);
     const navigate = useNavigate();
-
+	const [like, setLike] = useState(false);
+	const [dislike, setDislike] = useState(false);
     const iconicMovies = [
 		"12 Angry Men",
 		"Rear Window",
@@ -640,6 +641,14 @@ function Preguntas() {
         setRandomMovie(selectedMovie);
     };
 
+	const HandleClickLike = () => {
+		setLike(true);
+		setTimeout(()=>setLike(false), 1000);
+	}
+	const HandleClickDislike = () => {
+		setDislike(true);
+		setTimeout(()=>setDislike(false),1000);
+	}
     useEffect(() => {
         RandomMovie(); 
     }, []);
@@ -675,9 +684,9 @@ function Preguntas() {
                                 <p>No movie selected</p>
                             )}
                         </main>
-                        <button onClick={RandomMovie} className="my-button">❤️</button>
+                        <button onClick={()=>{RandomMovie(); HandleClickLike()}} className={`my-button ${like ? "like": ""}`}>❤️</button>
                         <button onClick={goToDescription} className="my-button">Watch Now 🎬</button>
-                        <button onClick={RandomMovie} className="my-button">❌</button>
+                        <button onClick={()=>{RandomMovie(); HandleClickDislike()}} className={`my-button ${dislike ? "dislike": ""}`}>❌</button>
                     </center>
                 </div>
                 <div className="img-peli">

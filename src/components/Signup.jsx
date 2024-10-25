@@ -51,10 +51,9 @@ function Signup() {
       }
     }
 
-    // Validar que la contraseña y la confirmación de contraseña coincidan
     if (Acount.Password !== Acount.CPassword) {
       SetError({ ...error, CPassword: "La contraseña no coincide" });
-      return; // Detener el proceso si las contraseñas no coinciden
+      return; 
     }
 
     await createUserWithEmailAndPassword(auth, Acount.Gmail, Acount.Password)
@@ -79,11 +78,10 @@ function Signup() {
       ...Acount, [name]: value
     });
 
-    // Si el campo ya no está vacío, borra el mensaje de error
     if (value !== "") {
       SetError({
         ...error,
-        [name]: "" // Borra el error específico de este campo
+        [name]: "" 
       });
     }
   };
@@ -139,7 +137,7 @@ function Signup() {
               name='CPassword'
               type='password'
             ></input>
-            <h5 className="Error">{error.CPassword}</h5> {/* Mensaje de error de confirmación de contraseña */}
+            <h5 className="Error">{error.CPassword}</h5> {}
 
             <br></br>
             <button className="SignupButton" type='Submit'>Submit</button>

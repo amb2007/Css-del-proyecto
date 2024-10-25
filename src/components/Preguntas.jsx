@@ -2,14 +2,16 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Preguntas.css";
 
 function Preguntas() {
-	const [movie, setMovie] = useState(null);
-	const [randomMovie, setRandomMovie] = useState("");
+    const [movie, setMovie] = useState(null);
+    const [randomMovie, setRandomMovie] = useState("");
+    const navigate = useNavigate();
 	const [loader, setLoader] = useState(false);
 	
-	const iconicMovies = [
+    const iconicMovies = [
 		"12 Angry Men",
 		"Rear Window",
 		"Vertigo",

@@ -7,9 +7,6 @@ const auth = getAuth(app)
 function Login(props) {
 
   const [Acount, SetAcount] = useState({
-    Name: "",
-    LastName: "",
-    Age: "",
     Gmail: "",
     Password: ""
   })

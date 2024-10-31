@@ -1,7 +1,8 @@
+/*Hecha la funcionalidad por Julio y Fritz*/
+
 import React, { useState } from 'react';
 import './footer.css';
 import axios from 'axios';
-import Descripcion from './Descripcion';
 import { useNavigate } from 'react-router-dom';
 function Footer() {
 
@@ -9,6 +10,11 @@ function Footer() {
     const [movie, setMovie] = useState(null)
     const navigate = useNavigate()
 
+    const handleClickPage = () => {
+        if (movie){
+            navigate('/Descripcion', {state:{movie}})
+        }
+    }
     const SearchMovie = (e) => {
         if (title){
             axios.get(`https://www.omdbapi.com/?t=${title}&apikey=e5b17a6c`)
@@ -36,7 +42,7 @@ function Footer() {
                     <h2>Buscar una película?</h2>
                     <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder="Buscar por nombre..." className="search-input" />
                     <button type='onclick' onClick={SearchMovie}>Search Movie</button>
-                    
+                    {movie && <button onClick={handleClickPage}>Learn More</button>}
                 </div>
             </div>
         </footer>

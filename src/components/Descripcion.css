@@ -102,18 +102,28 @@
   
   .countdown {
     display: flex;
-    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    padding: 10px; 
+    border: 1px solid #7e7e7e;
+    border-radius: 8px;
+    background-color: #7e7e7e;
+    width: fit-content;
+    margin: 0 auto; 
+}
+
+.countdown span {
+    font-size: 1.5rem;
     font-weight: bold;
-  }
-  
-  .countdown span {
-    margin: 0 5px;
-  }
-  
-  .countdown p {
-    margin-top: 5px;
+}
+
+.countdown p {
     font-size: 0.9rem;
-  }
+    margin: 0; 
+}
+
+
   
   .discover-button {
     background-color: #8E4DC2;

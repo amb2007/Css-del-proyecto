@@ -1,17 +1,33 @@
+/*Hecha la funcionalidad por Julio y Fritz*/
+
 import React, { useState } from 'react';
 import './footer.css';
-
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 function Footer() {
-/*
-    const [title, setTitle] = useState(null)
 
-    const SearchMovie = (e) => {
-        axios.get(`https://www.omdbapi.com/?t=${title}&apikey=e5b17a6c`)
-            .then((res) => setMovie(res.data))
-            .catch((err) => console.error("Error fetching movie", err))
-            .finally(() => setLoader(false));
+    const [title, setTitle] = useState(null)
+    const [movie, setMovie] = useState(null)
+    const navigate = useNavigate()
+
+    const handleClickPage = () => {
+        if (movie){
+            navigate('/Descripcion', {state:{movie}})
+        }
     }
-*/
+    const SearchMovie = (e) => {
+        if (title){
+            axios.get(`https://www.omdbapi.com/?t=${title}&apikey=e5b17a6c`)
+            .then((res) => {
+                if(res.data.Response === "True") {
+                    console.log(res.data)
+                    setMovie(res.data);
+                }
+            })
+            .catch((err) => console.error("Error fetching movie", err))
+        }
+    }
+
     return (
         <footer>
             <div className="footer-content">
@@ -24,7 +40,9 @@ function Footer() {
                 </div>
                 <div className="footer-section">
                     <h2>Buscar una película?</h2>
-                    <input type="text" placeholder="Buscar por nombre..." className="search-input" />
+                    <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder="Buscar por nombre..." className="search-input" />
+                    <button type='onclick' onClick={SearchMovie}>Search Movie</button>
+                    {movie && <button onClick={handleClickPage}>Learn More</button>}
                 </div>
             </div>
         </footer>

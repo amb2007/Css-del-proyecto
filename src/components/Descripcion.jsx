@@ -1,5 +1,3 @@
-// hecho por matias llanos, mateo ulla y santi
-
 import { useLocation } from "react-router-dom";
 import Footer from './Footer.jsx';
 import './Descripcion.css';
@@ -7,6 +5,19 @@ import './Descripcion.css';
 function Descripcion() {
   const location = useLocation();
   const { movie } = location.state || {};
+
+  // Convierte el runtime a horas y minutos
+  const getDuration = (runtime) => {
+    if (runtime && runtime.includes("min")) {
+      const minutes = parseInt(runtime.split(" ")[0], 10);
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+      return { hours, minutes: remainingMinutes };
+    }
+    return { hours: 1, minutes: 59 }; // Valor predeterminado
+  };
+
+  const duration = movie ? getDuration(movie.Runtime) : { hours: 1, minutes: 59 };
 
   return (
     <div className="page-container">
@@ -39,8 +50,10 @@ function Descripcion() {
           <div className="duration-box">
             <p>Duración:</p>
             <div className="countdown">
-              <span>{movie ? movie.Runtime.split(" ")[0] : "59"}</span> : <span>59</span> : <span>59</span>
-              <p>Hours Minutes Seconds</p>
+              <span>{duration.hours}</span>
+              <p>Horas</p>
+              <span>{duration.minutes}</span>
+              <p>Minutos</p>
             </div>
           </div>
           <button className="discover-button">Descubre más</button>

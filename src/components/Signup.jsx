@@ -1,8 +1,10 @@
+//Franco Pedrazzi y Luca Wlodarczyk
 import { useState, React } from 'react';
 import './SingUpAndLogin.css';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import { app } from './db';
+
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -29,6 +31,7 @@ function Signup() {
   const DatasNames = ["Name", "LastName", "Age", "Gmail", "Password", "CPassword"];
 
   const AddDataUser = async (id) => {
+    console.log(id);
     await setDoc(doc(db, "Users", id), {
       name: Acount.Name,
       LastName: Acount.LastName,
@@ -41,7 +44,7 @@ function Signup() {
 
     for (let i = 0; i < 6; i++) {
       const dataName = DatasNames[i];
-      console.log(dataName);
+
 
       if (Acount[dataName] === "") {
         SetError({ ...error, [dataName]: "Complete este valor" });
@@ -55,7 +58,7 @@ function Signup() {
       SetError({ ...error, CPassword: "La contraseña no coincide" });
       return; 
     }
-
+    
     await createUserWithEmailAndPassword(auth, Acount.Gmail, Acount.Password)
       .catch((error) => {
         const errorMessage = error.message;
@@ -63,9 +66,9 @@ function Signup() {
           SetError({ ...error, Gmail: "La cuenta ya está en uso" });
         }
       });
-
       await signInWithEmailAndPassword(auth, Acount.Gmail, Acount.Password)
       .then((userCredential) => {
+        AddDataUser(userCredential["user"].uid)
         props.send(userCredential["user"].uid)
       })
       .catch(() => {

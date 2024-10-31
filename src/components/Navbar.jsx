@@ -9,8 +9,11 @@ function Navbar() {
     const [SignupIsOpen, SetSignupIsOpen] = useState(false);
     const [LoginIsOpen, SetLoginIsOpen] = useState(false);
     const [IdAcount, SetIdAcount] = useState(localStorage.getItem("IdAcount"))
-    const [Acount, SetAcount] = useState({})
+    const [Acount, SetAcount] = useState("")
     const log=() => {
+      if(Acount!=""){
+        return
+      }
      localStorage.setItem("IdAcount", IdAcount);
         async function fetchData() {
           try {
@@ -26,7 +29,6 @@ function Navbar() {
           }
         }
         fetchData();
-        console.log(Acount)
       };
     return (
         <nav>
@@ -54,7 +56,7 @@ function Navbar() {
             ) : (
                 <div>
                 {log()}
-                <h3>{Acount.name}</h3>
+                <h3>{Acount.name} <img style={{width:"50px",height:"25px"}} src="../public/img/user-icon.webp"/></h3>
             </div>
             )
                 

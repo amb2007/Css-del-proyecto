@@ -137,17 +137,8 @@ function Signup() {
               name='CPassword'
               type='password'
             ></input>
-<<<<<<< HEAD
-            <h5 className="Error">{error.CPassword}</h5> {}
-
-            <br></br>
-            <button className="SignupButton" type='Submit'>Submit</button>
-            <br></br>
-            <br></br>
-=======
             <h5 className="error">{error.CPassword}</h5> {/* Mensaje de error de confirmación de contraseña */}
             <button className="SignupButton" type='Submit'><b>→</b> Sign Up</button>
->>>>>>> b80f5904490c125126eeb0ee09ff73087aa2e695
           </form>
         </div>
       </div>

@@ -1,31 +1,62 @@
-import './Principal.css'
+import './Principal.css';
+import Footer from './Footer';
+import { useState } from 'react';
 
-function Principal() {
+function HomePage() {
+  const categories = [
+    'Terror',
+    'Drama',
+    'Romance',
+    'Acción',
+    'Ciencia Ficción',
+    'Comedia',
+    'Aventura',
+    'Suspenso'
+  ];
+
+  const [isContentVisible, setIsContentVisible] = useState(false); // Estado para controlar la visibilidad del contenido
+
+  const toggleContentVisibility = () => {
+    setIsContentVisible(prevState => !prevState); // Alterna la visibilidad del contenido
+  };
+
+  const [startIndex, setStartIndex] = useState(0);
+  const itemsToShow = 3;
+
+  const handleNext = () => {
+    setStartIndex((prevIndex) => (prevIndex + itemsToShow) % categories.length);
+  };
+
+  const handlePrev = () => {
+    setStartIndex((prevIndex) => (prevIndex - itemsToShow + categories.length) % categories.length);
+  };
+
   return (
     <div className='homePage'>
       <h1>Título</h1>
-      <p>
-        Click on the Vite and React logos to learn more
-      </p>
-      <p id='arrow0' className='arrows'>v</p>
-      <div className='discoveryBegins'>
-        <h2>¿No sabes qué película ver?</h2>
-        <button id='discoveryButton'>Inicia Descubrimiento</button>
-        <img 
-          src="./public/img/home_discoveryPage.svg" 
-        />
-      </div>
-    <div className='certainCategories'>
-        <p id='arrow1' className='arrows'>v</p>
-        <button id='buttonCategTerror' className='buttonsCategStart'>Terror</button>
-        <button id='buttonCategDrama'className='buttonsCategStart'>Drama</button>
-        <button id='buttonCategRomance'className='buttonsCategStart'>Romance</button>
-        <button id='buttonCategAction'className='buttonsCategStart'>Actión</button>
-        <button id='buttonCategScienceFiction'className='buttonsCategStart'>Science Fictión</button>
-        <p id='arrow2' className='arrows'>v</p>
-      </div>
+      <p>Click on the Vite and React logos to learn more</p>
+      <p id='arrow0' className='arrows' onClick={toggleContentVisibility}>v</p>
+      
+      {isContentVisible && ( // Solo muestra el siguiente contenido si isContentVisible es true
+        <>
+          <div className='discoveryBegins'>
+            <h2>¿No sabes qué película ver?</h2>
+            <button id='discoveryButton'>Inicia Descubrimiento</button>
+            <img src="/img/homePageTitle.png" alt="Home Page Title" />
+          </div>
+          <div className='certainCategories'>
+            <button className='arrows' onClick={handlePrev}>←</button>
+            <div className='categoryDisplay'>
+              {categories.slice(startIndex, startIndex + itemsToShow).map((category, index) => (
+                <button key={index} className='buttonsCategStart'>{category}</button>
+              ))}
+            </div>
+            <button className='arrows' onClick={handleNext}>→</button>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
-export default Principal
+export default HomePage;

@@ -1,7 +1,7 @@
 // hecho por matias llanos, mateo ulla y santi
 
 import { useLocation } from "react-router-dom";
-import Footer from './footer.jsx';
+import Footer from './Footer.jsx';
 import './Descripcion.css';
 
 function Descripcion() {

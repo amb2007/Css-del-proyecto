@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Category from './components/Categorias';
 import Principal from './components/Principal';
-import Questions from './components/Preguntas';
 import SpecificCategory from './components/CategoriaEspecifica';
 import Description from './components/Descripcion';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import Preguntas from './components/Preguntas';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Principal />} /> 
         <Route path="/Categorias" element={<Category />} />
-        <Route path="/Preguntas" element={<Questions />} />
+        <Route path="/Preguntas" element={<Preguntas />} />
         <Route path="/Descripcion" element={<Description />} />
         <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
       </Routes>

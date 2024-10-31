@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './footer.css';
 
 function Footer() {
+/*
+    const [title, setTitle] = useState(null)
+
+    const SearchMovie = (e) => {
+        axios.get(`https://www.omdbapi.com/?t=${title}&apikey=e5b17a6c`)
+            .then((res) => setMovie(res.data))
+            .catch((err) => console.error("Error fetching movie", err))
+            .finally(() => setLoader(false));
+    }
+*/
     return (
         <footer>
             <div className="footer-content">

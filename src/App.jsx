@@ -3,7 +3,7 @@ import Category from './components/Categorias';
 import Principal from './components/Principal';
 import SpecificCategory from './components/CategoriaEspecifica';
 import Description from './components/Descripcion';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Preguntas from './components/Preguntas';
 

@@ -9,20 +9,21 @@ import Preguntas from './components/Preguntas';
 
 function App() {
   return (
-    <>  
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Principal />} /> 
-        <Route path="/Categorias" element={<Category />} />
-        <Route path="/Preguntas" element={<Preguntas />} />
-        <Route path="/Descripcion" element={<Description />} />
-        <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
-      </Routes>
-      <Footer /> {Footer}
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <Navbar />
+        <div>
+          <Routes>
+            <Route path="/" element={<Principal />} /> 
+            <Route path="/Categorias" element={<Category />} />
+            <Route path="/Preguntas" element={<Preguntas />} />
+            <Route path="/Descripcion" element={<Description />} />
+            <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
-    </>
-    
   );
 }
 

@@ -41,8 +41,11 @@ function Descripcion() {
           </p>
           <div className="extra-details">
             <p><span className="detail-title">Extra details</span></p>
-            <p>🌍 Actors: {movie ? movie.Actors : "Actores"}</p>
+            <p>👥 Actors: {movie ? movie.Actors : "Actores"}</p>
             <p>🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
+            <p>🎞️ Genre: {movie ? movie.Genre : "Genero"}</p>
+            <p>🍿 Ratings: {movie ? movie.Ratings[1].Source : "Source"} 🍅 {movie ? movie.Ratings[1].Value : "Porcentaje"}, Imdb ⭐ {movie ? movie.imdbRating : "Source"} </p>
+            <p>🏆 Awards: {movie ? movie.Awards : "Premios"}</p>
           </div>
         </div>
         <div className="right-content">

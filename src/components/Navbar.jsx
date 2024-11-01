@@ -45,7 +45,6 @@ function Navbar() {
                 <li><a href="/">Home</a></li>
                 <li><a href="/Categorias">Genders</a></li>
                 <li><a href="/Preguntas">Questions</a></li>
-                <li><a href="/Descripcion">Description</a></li>
                 <li><a href="#">Favorites</a></li>
             </ul>
             {IdAcount=="" ||  IdAcount=="null"? (

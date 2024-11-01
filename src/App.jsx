@@ -9,7 +9,7 @@ import Preguntas from './components/Preguntas';
 
 function App() {
   return (
-    <>
+    <>  
     <Router>
       <Navbar />
       <Routes>

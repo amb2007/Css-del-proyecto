@@ -9,28 +9,25 @@ function Footer() {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
 
-    const searchMovie = () => {
+    const SearchMovie = () => {
         if (title.trim()) {
             axios.get(`https://www.omdbapi.com/?t=${title}&apikey=e5b17a6c`)
                 .then((res) => {
                     if (res.data.Response === "True") {
                         setMovie(res.data);
-                        setError(null); 
-                        navigate('/Description', { state: { movie: res.data } });
+                        setError(null);
+                        navigate('/Descripcion', { state: { movie: res.data } });
                     } else {
                         setMovie(null);
-                        setError('Movie not found. Try another title.');
+                        setError('Película no encontrada. Intenta con otro nombre.');
                     }
                 })
-                .catch((err) => {
-                    console.error("Error fetching movie", err);
-                });
         }
     };
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            searchMovie();
+            SearchMovie();
         }
     };
 
@@ -38,10 +35,9 @@ function Footer() {
         <footer>
             <div className="footer-content">
                 <div className="footer-section">
-                    <h2>Movie Randomizer</h2>
+                    <h2>DescubrePeli</h2>
                     <div className="social-media">
                         <a href="https://www.facebook.com/InstitutoRenault/?locale=es_LA">Facebook</a>
-                        <br></br>
                         <a href="https://www.instagram.com/instituto_tecnico_renault/?hl=es">Instagram</a>
                     </div>
                 </div>
@@ -54,10 +50,10 @@ function Footer() {
                         onKeyDown={handleKeyDown}
                         placeholder="Search by name..."
                         className="search-input"
-                        style={{ marginRight: '8px' }} 
+                        style={{ marginRight: '8px' }}
                     />
-                    <button onClick={searchMovie}>Search Movie</button>
-                    {error && <p className="error-message" style={{marginTop: '6px'}}>{error}</p>}
+                    <button onClick={SearchMovie}>Search Movie</button>
+                    {error && <p className="error-message">{error}</p>}
                 </div>
             </div>
         </footer>

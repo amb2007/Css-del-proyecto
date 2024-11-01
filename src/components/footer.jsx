@@ -26,6 +26,7 @@ function Footer() {
             })
             .catch((err) => console.error("Error fetching movie", err))
         }
+        setTitle("")
     }
 
     return (
@@ -39,8 +40,8 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-section">
-                    <h2>Buscar una película?</h2>
-                    <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder="Buscar por nombre..." className="search-input" />
+                    <h2>Searching movies?</h2>
+                    <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} placeholder="Search by title..." className="search-input" />
                     <button type='onclick' onClick={SearchMovie}>Search Movie</button>
                     {movie && <button onClick={handleClickPage}>Learn More</button>}
                 </div>

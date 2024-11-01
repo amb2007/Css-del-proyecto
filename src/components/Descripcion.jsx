@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import Footer from './Footer.jsx';
 import './Descripcion.css';
-
+import Trailer from "./Trailer.jsx";
 function Descripcion() {
   const location = useLocation();
   const { movie } = location.state || {};
@@ -54,9 +54,11 @@ function Descripcion() {
               <p>Horas</p>
               <span>{duration.minutes}</span>
               <p>Minutos</p>
+                     {console.log(movie.imdbID)}
             </div>
           </div>
           <button className="discover-button">Descubre más</button>
+          <Trailer imdbId={movie.imdbID}></Trailer>
         </div>
       </div>
     </div>

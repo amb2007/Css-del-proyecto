@@ -1,7 +1,6 @@
 import Preguntas from './Preguntas';
 import './Principal.css';
-import Footer from './Footer';
-import { useState } from 'react';
+  import { useState } from 'react';
 
 function HomePage() {
   const categories = [

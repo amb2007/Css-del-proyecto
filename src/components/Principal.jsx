@@ -1,6 +1,6 @@
 import Preguntas from './Preguntas';
 import './Principal.css';
-import Footer from './footer';
+import Footer from './Footer';
 import { useState } from 'react';
 
 function HomePage() {

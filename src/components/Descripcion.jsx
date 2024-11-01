@@ -29,7 +29,7 @@ function Descripcion() {
       </div>
       <div className="content-section">
         <div className="left-content">
-          <h1>{movie ? movie.Title : "Nombre De La Película"}</h1>
+          <h1 className="movieName">{movie ? movie.Title : "Nombre De La Película"}</h1>
           <p className="release-date">
             Release date {movie ? movie.Released : "Sep 30, 2022"}
           </p>
@@ -41,11 +41,11 @@ function Descripcion() {
           </p>
           <div className="extra-details">
             <p><span className="detail-title">Extra details</span></p>
-            <p>👥 Actors: {movie ? movie.Actors : "Actores"}</p>
-            <p>🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
-            <p>🎞️ Genre: {movie ? movie.Genre : "Genero"}</p>
-            <p>🍿 Ratings: {movie ? movie.Ratings[1].Source : "Source"} 🍅 {movie ? movie.Ratings[1].Value : "Porcentaje"}, Imdb ⭐ {movie ? movie.imdbRating : "Source"} </p>
-            <p>🏆 Awards: {movie ? movie.Awards : "Premios"}</p>
+            <p className="datailsStyle">👥 Actors: {movie ? movie.Actors : "Actores"}</p>
+            <p className="datailsStyle">🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
+            <p className="datailsStyle">🎞️ Genre: {movie ? movie.Genre : "Genero"}</p>
+            <p className="datailsStyle">🍿 Ratings: {movie ? movie.Ratings[1].Source : "Source"} 🍅 {movie ? movie.Ratings[1].Value : "Porcentaje"}, Imdb ⭐ {movie ? movie.imdbRating : "Source"} </p>
+            <p className="datailsStyle">🏆 Awards: {movie ? movie.Awards : "Premios"}</p>
           </div>
         </div>
         <div className="right-content">

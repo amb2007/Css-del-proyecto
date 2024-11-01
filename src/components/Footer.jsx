@@ -17,16 +17,13 @@ function Footer() {
                 .then((res) => {
                     if (res.data.Response === "True") {
                         setMovie(res.data);
-                        setError(null); 
+                        setError(null);
                         navigate('/Descripcion', { state: { movie: res.data } });
                     } else {
                         setMovie(null);
-                        setError('Película no encontrada. Intenta con otro nombre.');
+                        setError('Movie not found. Try another title.');
                     }
                 })
-                .catch((err) => {
-                    console.error("Error fetching movie", err);
-                });
         }
     };
 
@@ -40,26 +37,25 @@ function Footer() {
         <footer>
             <div className="footer-content">
                 <div className="footer-section">
-                    <h2>DescubrePeli</h2>
+                    <h2>Movie Randomizer</h2>
                     <div className="social-media">
                         <a href="https://www.facebook.com/InstitutoRenault/?locale=es_LA">Facebook</a>
-                        <br></br>
                         <a href="https://www.instagram.com/instituto_tecnico_renault/?hl=es">Instagram</a>
                     </div>
                 </div>
                 <div className="footer-section">
-                    <h2>Buscar una película</h2>
+                    <h2>Search for a movie</h2>
                     <input
                         type="text"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder="Buscar por nombre..."
+                        placeholder="Search by name..."
                         className="search-input"
-                        style={{ marginRight: '8px' }} 
+                        style={{ marginRight: '8px' }}
                     />
-                    <button onClick={SearchMovie}>Buscar Película</button>
-                    {error && <p className="error-message" style={{marginTop: '6px'}}>{error}</p>}
+                    <button onClick={SearchMovie}>Search Movie</button>
+                    {error && <p className="error-message">{error}</p>}
                 </div>
             </div>
         </footer>

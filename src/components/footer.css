@@ -11,8 +11,8 @@ html, body {
 }
 
 main {
-    flex: 1; /* Ocupa el espacio restante entre la navbar y el footer */
     padding: 20px;
+    
 }
 
 /* Footer */

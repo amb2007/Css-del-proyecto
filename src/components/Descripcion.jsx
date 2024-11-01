@@ -32,31 +32,31 @@ function Descripcion() {
         <div className="left-content">
           <h1>{movie ? movie.Title : "Nombre De La Película"}</h1>
           <p className="release-date">
-            Fecha De Estreno {movie ? movie.Released : "Sep 30, 2022"}
+            Release date {movie ? movie.Released : "Sep 30, 2022"}
           </p>
           <p className="author">
-            Creada Por <span className="author-name">{movie ? movie.Director : "Nombre Del Autor"}</span>
+            Created by <span className="author-name">{movie ? movie.Director : "Nombre Del Autor"}</span>
           </p>
           <p className="description">
             {movie ? movie.Plot : "Descripcion"}
           </p>
           <div className="extra-details">
-            <p><span className="detail-title">Detalles Extra</span></p>
-            <p>🌍 Personajes: {movie ? movie.Actors : "Actores"}</p>
-            <p>🌍 Idiomas: {movie ? movie.Language : "Idiomas"}</p>
+            <p><span className="detail-title">Extra details</span></p>
+            <p>🌍 Actors: {movie ? movie.Actors : "Actores"}</p>
+            <p>🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
           </div>
         </div>
         <div className="right-content">
           <div className="duration-box">
-            <p>Duración:</p>
+            <p>Duration:</p>
             <div className="countdown">
               <span>{duration.hours}</span>
-              <p>Horas</p>
+              <p>Hours</p>
               <span>{duration.minutes}</span>
-              <p>Minutos</p>
+              <p>Minutes</p>
             </div>
           </div>
-          <button className="discover-button">Descubre más</button>
+          <button className="discover-button">Discover More</button>
         </div>
       </div>
     </div>

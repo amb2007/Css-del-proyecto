@@ -1,11 +1,20 @@
 import React from 'react'; 
-import Banner from '../assets/marcos.jpg';
+import Banner from '../assets/catalogo.jpeg';
 import './Categorias.css';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 // Importar Font Awesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Componente de Font Awesome
 import { faRandom, faSearch } from '@fortawesome/free-solid-svg-icons'; // Importar iconos específicos
 
 function Categorias() {
+
+  const navigate = useNavigate(); // Inicializa useNavigate
+
+  // Función para redirigir a la página de Preguntas
+  const handleRedirect = () => {
+    navigate('/preguntas'); // Redirige a la ruta de Preguntas
+  };
+
   return (
     <div className="app-container"> {/* Contenedor principal de la aplicación */}
       <img src={Banner} alt="Banner" className="banner" /> {/* Banner de la aplicación */}
@@ -14,7 +23,7 @@ function Categorias() {
         <p className="description">Aquí puedes explorar diferentes categorías.</p> {/* Descripción */}
         <div className="button-group"> {/* Contenedor para los botones */}
           {/* Botón Aleatorio con icono */}
-          <button className="random-button">
+          <button className="random-button" onClick={handleRedirect}> {/* Agrega onClick para redirigir */}
             <FontAwesomeIcon icon={faRandom} /> Aleatoria {/* El icono se añade aquí */}
           </button>
           {/* Botón Específico con icono */}
@@ -23,6 +32,7 @@ function Categorias() {
           </button>   
         </div>
       </div>
+      
     </div>
   );
 }

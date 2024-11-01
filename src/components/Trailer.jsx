@@ -36,8 +36,7 @@ const Trailer = ({ imdbId }) => {
                         width="560"
                         height="315"
                         src={trailerUrl} // Usa la URL de incrustación de YouTube
-                        title="Trailer"
-                        frameBorder="0"
+                        title="Trailer" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>

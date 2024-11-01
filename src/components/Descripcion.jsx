@@ -1,10 +1,9 @@
 import { useLocation } from "react-router-dom";
 import './Descripcion.css';
-
+import Trailer from "./Trailer.jsx";
 function Descripcion() {
   const location = useLocation();
   const { movie } = location.state || {};
-
   // Convierte el runtime a horas y minutos
   const getDuration = (runtime) => {
     if (runtime && runtime.includes("min")) {
@@ -59,6 +58,7 @@ function Descripcion() {
             </div>
           </div>
           <button className="discover-button">Discover More</button>
+          {movie && <Trailer imdbId={movie.imdbID}></Trailer>}
         </div>
       </div>
     </div>

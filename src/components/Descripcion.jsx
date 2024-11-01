@@ -58,7 +58,7 @@ function Descripcion() {
             </div>
           </div>
           <button className="discover-button">Discover More</button>
-          <Trailer imdbId={movie.imdbId}></Trailer>
+          {movie && <Trailer imdbId={movie.imdbID}></Trailer>}
         </div>
       </div>
     </div>

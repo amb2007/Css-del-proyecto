@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 /*Hecha la funcionalidad por Julio y Fritz*/
-=======
->>>>>>> ee4c240c53e00615f92d95e320a365de9038672b
+
 import React, { useState } from 'react';
 import './footer.css';
 import axios from 'axios';

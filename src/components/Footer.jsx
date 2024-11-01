@@ -19,7 +19,7 @@ function Footer() {
                         navigate('/Descripcion', { state: { movie: res.data } });
                     } else {
                         setMovie(null);
-                        setError('Película no encontrada. Intenta con otro nombre.');
+                        setError('Movie not found. Try another title.');
                     }
                 })
         }
@@ -35,7 +35,7 @@ function Footer() {
         <footer>
             <div className="footer-content">
                 <div className="footer-section">
-                    <h2>DescubrePeli</h2>
+                    <h2>Movie Randomizer</h2>
                     <div className="social-media">
                         <a href="https://www.facebook.com/InstitutoRenault/?locale=es_LA">Facebook</a>
                         <a href="https://www.instagram.com/instituto_tecnico_renault/?hl=es">Instagram</a>

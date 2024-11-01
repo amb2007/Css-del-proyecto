@@ -19,6 +19,7 @@ html, body {
   display: block;
   padding: 10px;
   background-color: #540d53;
+  margin-top: 40px; /* Desplaza hacia abajo la sección de descubrimiento */
 }
 
 .discoveryBegins h2 {
@@ -87,7 +88,7 @@ p.arrows {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Espacia flechas y contenido */
-  margin: 20px 0; /* Espaciado alrededor del carrusel */
+  margin: 40px 0; /* Aumenta el espaciado alrededor del carrusel */
   position: relative; /* Necesario para posicionar las flechas */
 }
 
@@ -126,7 +127,7 @@ p.arrows {
   padding: 3px 50px;
   border: 2px solid #ef629d;
   border-radius: 8px;
-  margin: 62px;
+  margin: 62px; /* Mantén el margen para los botones */
 }
 
 /* Media queries para pantallas pequeñas */

@@ -1,50 +1,66 @@
-import Footer from './footer.jsx';
-import './Descripcion.css'
+import { useLocation } from "react-router-dom";
+import Footer from './Footer.jsx';
+import './Descripcion.css';
 
 function Descripcion() {
+  const location = useLocation();
+  const { movie } = location.state || {};
+
+  // Convierte el runtime a horas y minutos
+  const getDuration = (runtime) => {
+    if (runtime && runtime.includes("min")) {
+      const minutes = parseInt(runtime.split(" ")[0], 10);
+      const hours = Math.floor(minutes / 60);
+      const remainingMinutes = minutes % 60;
+      return { hours, minutes: remainingMinutes };
+    }
+    return { hours: 1, minutes: 59 }; // Valor predeterminado
+  };
+
+  const duration = movie ? getDuration(movie.Runtime) : { hours: 1, minutes: 59 };
 
   return (
-<div className="page-container">
+    <div className="page-container">
       <div className="image-section">
-        <img 
-          src="scale.jpg" 
-          alt="Película" 
-          className="header-image" 
-        />
+        {movie && movie.Poster ? (
+          <img src={movie.Poster} alt={movie.Title} className="header-image" />
+        ) : (
+          <img src="scale.jpg" alt="Película" className="header-image" />
+        )}
       </div>
       <div className="content-section">
         <div className="left-content">
-          <h1>Nombre De La Película</h1>
-          <p className="release-date">Fecha De Estreno Sep 30, 2022</p>
-          <p className="author">Creada Por <span className="author-name">Nombre Del Autor</span></p>
+          <h1>{movie ? movie.Title : "Nombre De La Película"}</h1>
+          <p className="release-date">
+            Release date {movie ? movie.Released : "Sep 30, 2022"}
+          </p>
+          <p className="author">
+            Created by <span className="author-name">{movie ? movie.Director : "Nombre Del Autor"}</span>
+          </p>
           <p className="description">
-            Thscxbnxbnxn is a collection of 10,000 unique NFTs on the Ethereum blockchain.<br /><br />
-            There are all sorts of beings in the NFT Universe. The most advanced and friendly of the bunch are Orbitians.<br /><br />
-            They live in a metal space machines, high up in the sky and only have one foot on Earth.
-            These Orbitians are a peaceful race, but they have been at war with a group of invaders for many generations.
-            The invaders are called Upside-Downs, because of their inverted bodies that live on the ground, yet do not
-            know any other way to be. Upside-Downs believe that they will be able to win this war if they could only
-            get an eye into Orbitian territory, so they've taken to make human beings their target.
+            {movie ? movie.Plot : "Descripcion"}
           </p>
           <div className="extra-details">
-            <p><span className="detail-title">Detalles Extra</span></p>
-            <p>🌍 Personajes</p>
-            <p>🌍 Idiomas</p>
+            <p><span className="detail-title">Extra details</span></p>
+            <p>🌍 Actors: {movie ? movie.Actors : "Actores"}</p>
+            <p>🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
           </div>
         </div>
         <div className="right-content">
           <div className="duration-box">
-            <p>Duración:</p>
+            <p>Duration:</p>
             <div className="countdown">
-              <span>59</span> : <span>59</span> : <span>59</span>
-              <p>Hours Minutes Seconds</p>
+              <span>{duration.hours}</span>
+              <p>Hours</p>
+              <span>{duration.minutes}</span>
+              <p>Minutes</p>
             </div>
           </div>
-          <button className="discover-button">Descubre más</button>
+          <button className="discover-button">Discover More</button>
         </div>
-      </div> 
+      </div>
     </div>
-  )
-};
+  );
+}
 
-export default Descripcion
+export default Descripcion;

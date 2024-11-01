@@ -2,13 +2,17 @@
 
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./Preguntas.css";
 
 function Preguntas() {
-	const [movie, setMovie] = useState(null);
-	const [randomMovie, setRandomMovie] = useState("");
-
-	const iconicMovies = [
+    const [movie, setMovie] = useState(null);
+    const [randomMovie, setRandomMovie] = useState("");
+    const [loader, setLoader] = useState(false);
+    const navigate = useNavigate();
+	const [like, setLike] = useState(false);
+	const [dislike, setDislike] = useState(false);
+    const iconicMovies = [
 		"12 Angry Men",
 		"Rear Window",
 		"Vertigo",
@@ -629,64 +633,80 @@ function Preguntas() {
 		"The Fabelmans",
 		"The Banshees of Inisherin",
 		"Avatar: The Way of Water",
-	];
+    ];
 
-	const RandomMovie = () => {
-		const posicion = Math.floor(Math.random() * iconicMovies.length);
-		const selectedMovie = iconicMovies[posicion];
-		setRandomMovie(selectedMovie);
-	};
+    const RandomMovie = () => {
+        const position = Math.floor(Math.random() * iconicMovies.length);
+        const selectedMovie = iconicMovies[position];
+        setRandomMovie(selectedMovie);
+    };
 
-	useEffect(() => {
-		if (randomMovie) {
-			axios
-				.get(`https://www.omdbapi.com/?t=${randomMovie}&apikey=e5b17a6c`)
-				.then((res) => setMovie(res.data))
-				.catch((err) => console.error("Error fetching movie", err));
-		}
-	}, [randomMovie]);
+	const HandleClickLike = () => {
+		setLike(true);
+		setTimeout(()=>setLike(false), 1000);
+	}
+	const HandleClickDislike = () => {
+		setDislike(true);
+		setTimeout(()=>setDislike(false),1000);
+	}
+    useEffect(() => {
+        RandomMovie(); 
+    }, []);
 
-	return (
-		<>
-			<div className="grilla">
-				<div className="info-peli">
-					<center>
-						<h1>Movie Randomizer</h1>
-						<main>
-							{movie && movie.Title ? (
-								<div key={movie.imdbID}>
-									<h2>{movie.Title}</h2>
-									<p>{movie.Plot}</p>
-								</div>
-							) : (
-								<p>No hay película seleccionada</p>
-							)}
-						</main>
-						<button onClick={RandomMovie} className="my-button">❤️</button>
-						<button className="my-button">Watch now🎬</button>
-						<button onClick={RandomMovie} className="my-button">❌</button>
-					</center>
-				</div>
-				<div className="img-peli">
-					<center>
-						<main>
-							{movie && movie.Title ? (
-								<div key={movie.imdbID} className="imagen">
-									{movie.Poster ? (
-										<img src={movie.Poster} alt={movie.Title} />
-									) : (
-										<p>No hay imagen disponible</p>
-									)}
-								</div>
-							) : (
-								<p>No hay película seleccionada</p>
-							)}
-						</main>
-					</center>
-				</div>
-			</div>
-		</>
-	);
+    useEffect(() => {
+        if (randomMovie) {
+            setLoader(true);
+            axios
+                .get(`https://www.omdbapi.com/?t=${randomMovie}&apikey=e5b17a6c`)
+                .then((res) => setMovie(res.data))
+                .catch((err) => console.error("Error fetching movie", err))
+                .finally(() => setLoader(false));
+        }
+    }, [randomMovie]);
+
+    const goToDescription = () => {
+        navigate("/Descripcion", { state: { movie } });
+    };
+
+    return (
+        <>
+            <div className="grilla">
+                <div className="info-peli">
+                    <center>
+                        <h1>Movie Randomizer</h1>
+                        <main>
+                            {movie && movie.Title ? (
+                                <div key={movie.imdbID}>
+                                    <h2>{movie.Title}</h2>
+                                    <p>{movie.Plot}</p>
+                                </div>
+                            ) : (
+                                <p>No movie selected</p>
+                            )}
+                        </main>
+                        <button onClick={()=>{RandomMovie(); HandleClickLike()}} className={`my-button ${like ? "like": ""}`}>❤️</button>
+                        <button onClick={goToDescription} className="my-button">Watch Now 🎬</button>
+                        <button onClick={()=>{RandomMovie(); HandleClickDislike()}} className={`my-button ${dislike ? "dislike": ""}`}>❌</button>
+                    </center>
+                </div>
+                <div className="img-peli">
+                    <center>
+                        <main>
+                            {loader ? (
+                                <div className="loader	" />
+                            ) : movie && movie.Poster ? (
+                                <div key={movie.imdbID} className="imagen">
+                                    <img className="img-poster" src={movie.Poster} alt={movie.Title} />
+                                </div>
+                            ) : (
+                                <p>No movie selected</p>
+                            )}
+                        </main>
+                    </center>
+                </div>
+            </div>
+        </>
+    );
 }
 
 export default Preguntas;

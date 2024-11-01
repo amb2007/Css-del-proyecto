@@ -1,15 +1,22 @@
 /*fondo*/
 body {
     background-color:#2B2B2B;
-    ;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     color: white; 
 }
+.root{
+    max-width: max-content;
+}
+
+.titlePage{
+  font-family: Work Sans;
+}
 
 /*boton*/
 .my-button {
+    font-family: Work Sans;
     font-size: 18px;
     background-color:#A259FF;
     color: white;
@@ -24,6 +31,7 @@ body {
     grid-template-columns: 1fr 1fr; /* Dos columnas: 50% para detalles, 50% para la imagen */
     gap: 20px; /* Espacio entre columnas */
     align-items: center; /* Centrar verticalmente */
+    font-family: Oxanium;
 }
 
 /*loader*/
@@ -83,6 +91,7 @@ body {
 
 /*Centrado de data*/
 .info-peli{
+  font-family: Work Sans;
   margin-top: 9rem;
   padding-left: 15%;
 }

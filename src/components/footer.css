@@ -1,74 +1,63 @@
+/* General */
 html, body {
-    height: 100%; /* Asegura que el cuerpo y la página ocupen toda la altura */
+    height: 100%; /* Ocupa la altura total */
     margin: 0;
 }
 
 #root {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Altura mínima del viewport */
+    width: 100%; /* Ahora ocupa todo el ancho */
 }
 
 main {
-    flex: 1; /* Ocupa todo el espacio disponible entre el header y el footer */
+    padding: 20px;
+    
 }
 
+/* Footer */
 footer {
-    background-color: #282c34; /* Color de fondo */
-    color: white; /* Texto en blanco */
-    text-align: center; /* Texto centrado */
-    padding: 20px 0; /* Espaciado interno */
-    width: 100%; /* Ocupa todo el ancho */
-    margin-top: auto; /* Empuja el footer al final del contenido */
-    position: relative; /* No está fijo en la pantalla */
-    bottom: 0;
+    background-color: #282c34; /* Fondo oscuro */
+    color: white;
+    text-align: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    margin-top: auto; /* Empuja el footer al final */
 }
 
 .footer-content {
-    display: flex; /* Flexbox para distribución de secciones */
+    display: flex;
     justify-content: space-between; /* Espacio entre secciones */
-    align-items: flex-start; /* Alineación en la parte superior */
-    flex-wrap: wrap; /* Ajusta las secciones en pantallas más pequeñas */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Ajusta en pantallas pequeñas */
+    padding: 0 20px; /* Espaciado lateral */
+    max-width: 1200px; /* Ajusta este valor según lo desees */
+    margin: 0 auto; /* Centra el contenido */
 }
 
 .footer-section {
-    flex: 1; /* Las secciones ocupan espacio igual */
-    margin: 0 20px; /* Margen entre secciones */
+    flex: 1;
+    margin: 10px; /* Espacio entre secciones */
 }
 
 .footer-section h2 {
-    margin-bottom: 5px; /* Espacio debajo del título */
-}
-
-.footer-section ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
-    padding: 0; /* Sin relleno */
-}
-
-.footer-section ul li {
-    margin: 5px 0; /* Espacio entre elementos de la lista */
+    margin-bottom: 10px;
 }
 
 .footer-section a {
-    color: #EF629D; /* Color de los enlaces */
-    text-decoration: none; /* Sin subrayado */
+    color: #EF629D;
+    text-decoration: none;
+    margin: 10px; /* Espacio entre secciones */
+
 }
 
 .footer-section a:hover {
-    color: #21a1f1; /* Color al pasar el ratón */
-}
-
-.social-media a {
-    margin: 0 10px; /* Espacio entre enlaces de redes sociales */
+    color: #21a1f1; /* Color de hover */
 }
 
 .search-input {
-    margin-bottom: 20px; /* Espacio entre Buscar por nombre */
-    padding: 10px; /* Relleno dentro del campo de búsqueda */
-    width: 100%; /* Ancho completo */
-    max-width: 200px; /* Ancho máximo del campo de búsqueda */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    width: 100%;
+    max-width: 200px;
+    border: none;
+    border-radius: 5px;
 }
-
-

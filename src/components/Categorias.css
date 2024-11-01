@@ -1,17 +1,18 @@
 
 body {
     font-family: 'Work Sans', sans-serif;
-    margin: 0; 
+    margin: 0;
+    padding: 0;
     background: #2B2B2B;
-    background-size: cover;  
-
+    background-size: cover;
   }
   
-  .app-container {
 
+  .app-container {
     display: flex;
-    align-items: center; /* Centra verticalmente el contenido */
-    justify-content: space-around; /* Espacia los elementos */
+    align-items: center;
+    justify-content: space-around;
+    flex-grow: 1; /* Permite que el contenido crezca */
     
   }
   
@@ -23,12 +24,12 @@ body {
   }
   
   .text-container {
+    font-family: Work Sans;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra el texto verticalmente */
     align-items: flex-start; /* Alinea el texto a la izquierda */
     color: white; /* Color del texto */
-    margin-left: 80px; /* Margen izquierdo para el contenedor de texto */
   }
   
   .title {
@@ -47,6 +48,7 @@ body {
   }
   
   .random-button, .specific-button {
+    font-family: Work Sans;
     border: 1px solid #A259FF; /* Borde violeta */
     border-radius: 5px; /* Bordes redondeados */
     background-color: #3B3B3B; /* Color de fondo gris */

@@ -1,11 +1,9 @@
 import { useLocation } from "react-router-dom";
-import Footer from './Footer.jsx';
 import './Descripcion.css';
-
+import Trailer from "./Trailer.jsx";
 function Descripcion() {
   const location = useLocation();
   const { movie } = location.state || {};
-
   // Convierte el runtime a horas y minutos
   const getDuration = (runtime) => {
     if (runtime && runtime.includes("min")) {
@@ -30,33 +28,37 @@ function Descripcion() {
       </div>
       <div className="content-section">
         <div className="left-content">
-          <h1>{movie ? movie.Title : "Nombre De La Película"}</h1>
+          <h1 className="movieName">{movie ? movie.Title : "Nombre De La Película"}</h1>
           <p className="release-date">
-            Fecha De Estreno {movie ? movie.Released : "Sep 30, 2022"}
+            Release date {movie ? movie.Released : "Sep 30, 2022"}
           </p>
           <p className="author">
-            Creada Por <span className="author-name">{movie ? movie.Director : "Nombre Del Autor"}</span>
+            Created by <span className="author-name">{movie ? movie.Director : "Nombre Del Autor"}</span>
           </p>
           <p className="description">
             {movie ? movie.Plot : "Descripcion"}
           </p>
           <div className="extra-details">
-            <p><span className="detail-title">Detalles Extra</span></p>
-            <p>🌍 Personajes: {movie ? movie.Actors : "Actores"}</p>
-            <p>🌍 Idiomas: {movie ? movie.Language : "Idiomas"}</p>
+            <p><span className="detail-title">Extra details</span></p>
+            <p className="datailsStyle">👥 Actors: {movie ? movie.Actors : "Actores"}</p>
+            <p className="datailsStyle">🌍 Language: {movie ? movie.Language : "Idiomas"}</p>
+            <p className="datailsStyle">🎞️ Genre: {movie ? movie.Genre : "Genero"}</p>
+            <p className="datailsStyle">🍿 Ratings: {movie ? movie.Ratings[1].Source : "Source"} 🍅 {movie ? movie.Ratings[1].Value : "Porcentaje"}, Imdb ⭐ {movie ? movie.imdbRating : "Source"} </p>
+            <p className="datailsStyle">🏆 Awards: {movie ? movie.Awards : "Premios"}</p>
           </div>
         </div>
         <div className="right-content">
           <div className="duration-box">
-            <p>Duración:</p>
+            <p>Duration:</p>
             <div className="countdown">
               <span>{duration.hours}</span>
-              <p>Horas</p>
+              <p>Hours</p>
               <span>{duration.minutes}</span>
-              <p>Minutos</p>
+              <p>Minutes</p>
             </div>
           </div>
-          <button className="discover-button">Descubre más</button>
+          <button className="discover-button">Discover More</button>
+          {movie && <Trailer imdbId={movie.imdbID}></Trailer>}
         </div>
       </div>
     </div>

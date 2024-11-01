@@ -1,6 +1,6 @@
+import Preguntas from './Preguntas';
 import './Principal.css';
-import Footer from './Footer';
-import { useState } from 'react';
+  import { useState } from 'react';
 
 function HomePage() {
   const categories = [
@@ -30,6 +30,9 @@ function HomePage() {
   const handlePrev = () => {
     setStartIndex((prevIndex) => (prevIndex - itemsToShow + categories.length) % categories.length);
   };
+  const handleButtonClick = () => {
+    window.location.href = "/Preguntas"; 
+  };
 
   return (
     <div className='homePage'>
@@ -41,7 +44,7 @@ function HomePage() {
         <>
           <div className='discoveryBegins'>
             <h2>¿No sabes qué película ver?</h2>
-            <button id='discoveryButton'>Inicia Descubrimiento</button>
+            <button id='discoveryButton'  onClick={handleButtonClick}>Inicia Descubrimiento</button>
             <img src="/img/homePageTitle.png" alt="Home Page Title" />
           </div>
           <div className='certainCategories'>

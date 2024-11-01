@@ -1,13 +1,14 @@
 /*fondo*/
 body {
     background-color:#2B2B2B;
-    ;
     margin: 0;
     padding: 0;
     min-height: 100vh;
     color: white; 
 }
-
+.root{
+    max-width: max-content;
+}
 /*boton*/
 .my-button {
     font-size: 18px;

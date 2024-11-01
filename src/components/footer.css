@@ -46,6 +46,8 @@ footer {
 .footer-section a {
     color: #EF629D;
     text-decoration: none;
+    margin: 10px; /* Espacio entre secciones */
+
 }
 
 .footer-section a:hover {

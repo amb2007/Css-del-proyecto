@@ -12,6 +12,7 @@ function Preguntas() {
     const navigate = useNavigate();
 	const [like, setLike] = useState(false);
 	const [dislike, setDislike] = useState(false);
+	const [favorites, setFavorites] = useState([]);
     const iconicMovies = [
 		"12 Angry Men",
 		"Rear Window",
@@ -642,9 +643,13 @@ function Preguntas() {
     };
 
 	const HandleClickLike = () => {
+		if (movie && !favorites.some(fav => fav.imdbID === movie.imdbID)) {
+			setFavorites(prevFavorites => [...prevFavorites, movie]);
+		}
 		setLike(true);
-		setTimeout(()=>setLike(false), 1000);
-	}
+		setTimeout(() => setLike(false), 1000);
+	};
+	
 	const HandleClickDislike = () => {
 		setDislike(true);
 		setTimeout(()=>setDislike(false),1000);

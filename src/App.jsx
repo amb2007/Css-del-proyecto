@@ -6,23 +6,25 @@ import Description from './components/Descripcion';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Preguntas from './components/Preguntas';
+import Favorites from './components/Favorites';
 
 function App() {
   return (
-    <>  
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Principal />} /> 
-        <Route path="/Categorias" element={<Category />} />
-        <Route path="/Preguntas" element={<Preguntas />} />
-        <Route path="/Descripcion" element={<Description />} />
-        <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
-      </Routes>
-      <Footer /> {Footer}
-    </Router>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Principal />} />
+          <Route path="/Categorias" element={<Category />} />
+          <Route path="/Preguntas" element={<Preguntas />} />
+          <Route path="/Descripcion" element={<Description />} />
+          <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
+          <Route path="/Favorites" element={<Favorites  />} />
+        </Routes>
+        <Footer /> {Footer}
+      </Router>
     </>
-    
+
   );
 }
 

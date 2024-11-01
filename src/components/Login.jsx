@@ -18,7 +18,7 @@ function Login(props) {
         props.send(userCredential["user"].uid)
       })
       .catch(() => {
-        SetError("No se a podido acceder a tu cuenta verifica la contraseña y el mail")
+        SetError("No se ha podido acceder a tu cuenta verifica la contraseña y el mail")
       });
 
   }
@@ -36,7 +36,7 @@ function Login(props) {
         <div>
           <form onSubmit={Submit}>
             <h5 className="error">{error}</h5>
-            <h3>Gmail:</h3>
+            <h3>Mail:</h3>
             <input className={"SignupInputs"}
               onChange={Handle}
               name='Gmail'

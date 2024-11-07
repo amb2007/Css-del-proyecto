@@ -1,10 +1,10 @@
 import React from 'react'; 
 import Banner from '../assets/catalogo.jpeg';
 import './Categorias.css';
-import { useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { useNavigate } from 'react-router-dom'; 
 // Importar Font Awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Componente de Font Awesome
-import { faRandom, faSearch } from '@fortawesome/free-solid-svg-icons'; // Importar iconos específicos
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+import { faRandom, faSearch } from '@fortawesome/free-solid-svg-icons'; 
 
 function Categorias() {
 
@@ -16,19 +16,19 @@ function Categorias() {
   };
 
   return (
-    <div className="app-container"> {/* Contenedor principal de la aplicación */}
-      <img src={Banner} alt="Banner" className="banner" /> {/* Banner de la aplicación */}
-      <div className="text-container"> {/* Contenedor para el texto */}
-        <h1 className="title">Categorias</h1> {/* Título principal */}
-        <p className="description">Aquí puedes explorar diferentes categorías.</p> {/* Descripción */}
-        <div className="button-group"> {/* Contenedor para los botones */}
-          {/* Botón Aleatorio con icono */}
+    <div className="app-container"> 
+      <img src={Banner} alt="Banner" className="banner" /> 
+      <div className="text-container"> 
+        <h1 className="title">Categorias</h1> 
+        <p className="description">Aquí puedes explorar diferentes categorías.</p> 
+        <div className="button-group"> 
+          
           <button className="random-button" onClick={handleRedirect}> {/* Agrega onClick para redirigir */}
-            <FontAwesomeIcon icon={faRandom} /> Aleatoria {/* El icono se añade aquí */}
+            <FontAwesomeIcon icon={faRandom} /> Aleatoria 
           </button>
-          {/* Botón Específico con icono */}
+         
           <button className="specific-button">
-            <FontAwesomeIcon icon={faSearch} /> Específica {/* El icono se añade aquí */}
+            <FontAwesomeIcon icon={faSearch} /> Específica 
           </button>   
         </div>
       </div>

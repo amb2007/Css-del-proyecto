@@ -6,24 +6,25 @@ import Description from './components/Descripcion';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Preguntas from './components/Preguntas';
+import Favorites from './components/Favorites';
 
 function App() {
   return (
-    <Router>
-      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <>
+      <Router>
         <Navbar />
-        <div>
-          <Routes>
-            <Route path="/" element={<Principal />} /> 
-            <Route path="/Categorias" element={<Category />} />
-            <Route path="/Preguntas" element={<Preguntas />} />
-            <Route path="/Descripcion" element={<Description />} />
-            <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
-          </Routes>
-        </div>
-        <Footer />
-      </div>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Principal />} />
+          <Route path="/Categorias" element={<Category />} />
+          <Route path="/Preguntas" element={<Preguntas />} />
+          <Route path="/Descripcion" element={<Description />} />
+          <Route path="/CategoriaEspecifica" element={<SpecificCategory />} />
+          <Route path="/Favorites" element={<Favorites  />} />
+        </Routes>
+        <Footer /> {Footer}
+      </Router>
+    </>
+
   );
 }
 

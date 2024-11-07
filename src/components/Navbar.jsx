@@ -42,10 +42,11 @@ function Navbar() {
             {LoginIsOpen && <Login send={SetIdAcount}></Login>}
             <img id="logo" src="INCLUIR_RUTA_DE_IMAGEN" ></img>
             <ul>
-                <li><a className='buttonNav' href="/">Home</a></li>
-                <li><a className='buttonNav' href="/Categorias">Genres</a></li>
-                <li><a className='buttonNav' href="/Preguntas">Questions</a></li>
-                <li><a className='buttonNav' href="#">Favorites</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Categorias">Genders</a></li>
+                <li><a href="/Preguntas">Questions</a></li>
+                <li><a href="/Descripcion">Description</a></li>
+                <li><a href="/Favorites">Favorites</a></li>
             </ul>
             {IdAcount=="" ||  IdAcount=="null"? (
                 <div>

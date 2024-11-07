@@ -11,19 +11,20 @@ body {
   .app-container {
     display: flex;
     align-items: center;
-    justify-content: space-around;
     flex-grow: 1; /* Permite que el contenido crezca */
     
   }
   
   .banner {
-    width: 500px; /* Ancho fijo de la imagen */
-    height: 600px; /* Alto fijo de la imagen */
+    width: 40vw; /* Ancho fijo de la imagen */
+    height: 90vh; /* Alto fijo de la imagen */
     object-fit: cover; /* Mantiene la proporción de la imagen */
     margin-top: 100px;
   }
   
   .text-container {
+    margin-left: 8vw;
+    margin-right: 10vw;
     font-family: Work Sans;
     display: flex;
     flex-direction: column;

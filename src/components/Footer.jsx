@@ -1,3 +1,5 @@
+/*Hecha la funcionalidad por Julio y Fritz*/
+
 import React, { useState } from 'react';
 import './footer.css';
 import axios from 'axios';

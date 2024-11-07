@@ -1,14 +1,17 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-//import './Favoritos.css';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function Favoritos() {
-  const location = useLocation();
-  const { favorites } = location.state || { favorites: [] }; // Obtener la lista de favoritos
+  const [favorites, setFavorites] = useState([]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    setFavorites(storedFavorites);
+  }, []);
+
   const goToDescription = (movie) => {
-    navigate('/Descripcion', { state: { movie } }); // Redirigir a la descripción de la película
+    navigate('/Descripcion', { state: { movie } });
   };
 
   return (

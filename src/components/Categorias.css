@@ -24,6 +24,7 @@ body {
   }
   
   .text-container {
+    font-family: Work Sans;
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra el texto verticalmente */
@@ -47,6 +48,7 @@ body {
   }
   
   .random-button, .specific-button {
+    font-family: Work Sans;
     border: 1px solid #A259FF; /* Borde violeta */
     border-radius: 5px; /* Bordes redondeados */
     background-color: #3B3B3B; /* Color de fondo gris */

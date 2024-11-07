@@ -11,6 +11,14 @@ nav {
     z-index: 1000; /* Asegura que el navbar esté por encima de otros elementos */
 }
 
+.buttonNav{
+    font-family: Work Sans;
+}
+
+.buttonsLog{
+    font-family: Work Sans;
+}
+
 /* Asegura que el contenido no se superponga con el navbar */
 body {
     padding-top: 60px; /* Ajusta este valor según la altura del navbar */
@@ -54,6 +62,7 @@ nav div {
 }
 
 button {
+    font-family: Work Sans;
     padding: 8px 15px;
     border: none;
     cursor: pointer;
@@ -63,11 +72,13 @@ button {
 }
 
 button#login {
+    font-family: Work Sans;
     background-color: white;
     color: black;
 }
 
 button#register {
+    font-family: Work Sans;
     background-color: #ff69b4;
     color: white;
 }

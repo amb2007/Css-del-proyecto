@@ -5,6 +5,8 @@ import { useState } from 'react';
 import Signup from "./Signup";
 import {doc, getDoc } from "firebase/firestore";
 import { db } from './db';
+import icon from "../../public/img/LogoV3.svg"
+
 function Navbar() {
     const [SignupIsOpen, SetSignupIsOpen] = useState(false);
     const [LoginIsOpen, SetLoginIsOpen] = useState(false);
@@ -40,7 +42,7 @@ function Navbar() {
             </div>}
             {SignupIsOpen && <Signup send={SetIdAcount}></Signup>}
             {LoginIsOpen && <Login send={SetIdAcount}></Login>}
-            <img id="logo" src="INCLUIR_RUTA_DE_IMAGEN" ></img>
+            <img id="logo" src={icon} ></img>
             <ul>
                 <li><a className='buttonNav' href="/">Home</a></li>
                 <li><a className='buttonNav' href="/Categorias">Genders</a></li>

@@ -4,6 +4,7 @@ import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import axios from "axios";
 const db = getFirestore(app);
 function CategoriaEspecifica({selectedgenre}) {
+    /*
     const
     axios.get("http://localhost:3000/movies")
     .then((res) => )
@@ -24,8 +25,7 @@ function CategoriaEspecifica({selectedgenre}) {
         </div>
         
     )
-    
+    */
   }
-  
   export default CategoriaEspecifica;
   

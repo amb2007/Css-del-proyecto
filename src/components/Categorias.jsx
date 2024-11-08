@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 // Importar Font Awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRandom, faSearch } from "@fortawesome/free-solid-svg-icons";
+import CategoriaEspecifica from "./CategoriaEspecifica";
 //import Dropdown from "react-bootstrap/Dropdown";
 function Categorias() {
   const navigate = useNavigate(); // Inicializa useNavigate
@@ -64,6 +65,7 @@ function Categorias() {
           })}
         </div>
       </div>
+      <CategoriaEspecifica selectedgenre={selectedgenre}/>
     </div>
   );
 }

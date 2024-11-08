@@ -1,18 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { app } from "./db";
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 import axios from "axios";
+import Footer from "./footer"
 const db = getFirestore(app);
-function CategoriaEspecifica({selectedgenre}) {
-    /*
-    const
+function CategoriaEspecifica() {
+
+    const [Data, setData] = useState([])
+
     axios.get("http://localhost:3000/movies")
-    .then((res) => )
+    .then(res => {setData(prev=>[...prev,res.data])})
+
+    console.log(Data)
  useEffect(async()=>{
-    for(let i=0;i<700;i++){
-        await setDoc(doc(db, "Peliculas", ), {
-            Title: "12 Angry Men",
-            Genre: "Crime, Drama"   
+    for(let i=0;Data.length<700;i++){
+        await setDoc(doc(db, "Peliculas",Data[i].Title ), {
+            Title: Data[i].Title ,
+            Genre: Data[i].Genre    
           });  
     }
         
@@ -21,11 +25,10 @@ function CategoriaEspecifica({selectedgenre}) {
     return (
         <div>
             <h1>Categoría Específica</h1>;
-            <Footer /> {Footer}
         </div>
         
     )
-    */
+
   }
   export default CategoriaEspecifica;
   

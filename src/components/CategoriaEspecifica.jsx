@@ -11,7 +11,7 @@ function CategoriaEspecifica() {
     axios.get("http://localhost:3000/movies")
     .then(res => {setData(prev=>[...prev,res.data])})
 
-    console.log(Data)
+
  useEffect(async()=>{
     for(let i=0;Data.length<700;i++){
         await setDoc(doc(db, "Peliculas",Data[i].Title ), {
@@ -20,7 +20,7 @@ function CategoriaEspecifica() {
           });  
     }
         
-},[])
+},[Data])
  
     return (
         <div>

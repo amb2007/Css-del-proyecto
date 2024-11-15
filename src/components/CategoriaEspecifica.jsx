@@ -5,30 +5,27 @@ import axios from "axios";
 import Footer from "./footer"
 const db = getFirestore(app);
 function CategoriaEspecifica() {
-
-    const [Data, setData] = useState([])
-
-    axios.get("http://localhost:3000/movies")
-    .then(res => {setData(prev=>[...prev,res.data])})
-
-
- useEffect(async()=>{
-    for(let i=0;Data.length<700;i++){
-        await setDoc(doc(db, "Peliculas",Data[i].Title ), {
-            Title: Data[i].Title ,
-            Genre: Data[i].Genre    
-          });  
-    }
-        
-},[Data])
- 
+    // const [Data, setData] = useState([])
+    // async function fetchData() {
+    //     try {
+    //       const docRef = doc(db, "Peliculas", Title);
+    //       const docSnap = await getDoc(docRef);
+    //       if (docSnap.exists()) {
+    //           setData(docSnap.data());
+    //       } else {
+    //         console.log("No se encontró el documento");
+    //       }
+    //     } catch (error) {
+    //       console.error("Error al obtener el documento:", error);
+    //     }
+    //   }
+    //   fetchData();
     return (
         <div>
             <h1>Categoría Específica</h1>;
         </div>
-        
+
     )
 
-  }
-  export default CategoriaEspecifica;
-  
+}
+export default CategoriaEspecifica;
